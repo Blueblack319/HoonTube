@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.14.0/css/all.css", integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc", crossorigin="anonymous")
+        link(rel="stylesheet", href="/dist/css/styles.css")
+        title #{pageName} | HoonTube
+    body
+        include ../partials/header
+        main
+            block content
+        include ../partials/footer
+        script(src="/dist/js/main.js")
+        
