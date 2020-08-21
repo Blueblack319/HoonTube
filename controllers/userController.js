@@ -38,7 +38,6 @@ export const githubLoginCallBack = async (_, __, profile, cb) => {
   const {
     _json: { id, avatar_url, name, email },
   } = profile;
-  console.log(id, avatar_url, name, email);
   try {
     const user = await User.findOne({ email });
     if (user) {
@@ -102,7 +101,7 @@ export const userDetail = async (req, res) => {
   }
 };
 
-export const editProfile = (req, res) =>
+export const getEditProfile = (req, res) =>
   res.render("editProfile", { pageName: "Edit Profile" });
 export const changePassword = (req, res) =>
   res.render("changePassword", { pageName: "Change Password" });
