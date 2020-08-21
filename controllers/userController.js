@@ -7,6 +7,7 @@ export const postJoin = async (req, res, next) => {
   const {
     body: { name, email, password, password2 },
   } = req;
+  console.log(name, email, password, password2);
   if (password !== password2) {
     res.status(400);
     res.render("join", { pageName: "Join" });
@@ -85,7 +86,7 @@ export const logout = (req, res) => {
   res.redirect(routes.home);
 };
 
-export const getMe = (req, res) => {
+export const getMe = async (req, res) => {
   res.render("userDetail", { pageName: "Me", user: req.user });
 };
 
@@ -103,5 +104,21 @@ export const userDetail = async (req, res) => {
 
 export const getEditProfile = (req, res) =>
   res.render("editProfile", { pageName: "Edit Profile" });
+export const postEditProfile = async (req, res) => {
+  const {
+    body: { name, email },
+    file,
+  } = req;
+  try {
+    await User.findByIdAndUpdate(req.user.id, {
+      name,
+      email,
+      avatarUrl: file ? `/${file.path}` : req.user.avatarUrl,
+    });
+    res.redirect(`/users${routes.me}`);
+  } catch (error) {
+    res.redirect(`/users${routes.editProfile}`);
+  }
+};
 export const changePassword = (req, res) =>
   res.render("changePassword", { pageName: "Change Password" });
