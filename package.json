@@ -7,7 +7,7 @@
     "build": "gulp build",
     "dev:assets": "gulp dev",
     "deploy": "gulp deploy",
-    "dev:server": "nodemon --exec babel-node init.js",
+    "dev:server": "nodemon --exec babel-node init.js --delay 2",
     "tunnel": "lt -h 'http://serverless.social' -p 5000"
   },
   "repository": {
