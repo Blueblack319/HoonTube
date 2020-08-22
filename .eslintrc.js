@@ -2,6 +2,7 @@ module.exports = {
   env: {
     node: true,
     es2020: true,
+    browser: true,
   },
   extends: "eslint:recommended",
   parserOptions: {
