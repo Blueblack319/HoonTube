@@ -10,6 +10,7 @@ import mongoose from "mongoose";
 import passport from "passport";
 import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
+import apiRouter from "./routers/apiRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import { localsMiddlewares } from "./middlewares";
@@ -44,6 +45,7 @@ app.use(passport.session());
 app.use(localsMiddlewares);
 
 app.use(routes.home, globalRouter);
+app.use(routes.api, apiRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
 
