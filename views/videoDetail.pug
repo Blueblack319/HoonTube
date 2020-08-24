@@ -22,10 +22,9 @@ block content
                 |Uploaded by
                 a(href=routes.userDetail(video.creator.id))=video.creator.name
         .video__comments
-            if video.views === 0
-                span.video__comment-number
-                    span#js-commentNumber
-                | None
+            if video.comments.length === 0
+                span.video__comment-number 
+                    span#js-commentNumber None
             else if video.comments.length === 1
                 span.video__comment-number
                     span#js-commentNumber 1
@@ -35,10 +34,13 @@ block content
                     span#js-commentNumber=video.comments.length
                 |  comments
             form.add-comment#js-addComment
-                input(type="text", name="comment", placeholder="Add a comment")
+                input#js-input(type="text", name="comment", placeholder="Add a comment")
             ul.video__comment-list#js-commentList
                 each comment in video.comments.reverse()
                     li
                         span= comment.text
+                        if loggedUser.id == comment.creator
+                            button ❌
+                            .comment-id#js-commentId= comment.id
 
         
