@@ -7,7 +7,6 @@ export const postJoin = async (req, res, next) => {
   const {
     body: { name, email, password, password2 },
   } = req;
-  console.log(name, email, password, password2);
   if (password !== password2) {
     res.status(400);
     res.render("join", { pageName: "Join" });
@@ -113,7 +112,7 @@ export const postEditProfile = async (req, res) => {
     await User.findByIdAndUpdate(req.user.id, {
       name,
       email,
-      avatarUrl: file ? `/${file.path}` : req.user.avatarUrl,
+      avatarUrl: file ? file.location : req.user.avatarUrl,
     });
     res.redirect(`/users${routes.me}`);
   } catch (error) {
