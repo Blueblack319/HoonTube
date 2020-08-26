@@ -10,6 +10,7 @@
     "build:assets": "gulp dev",
     "build:server": "babel src --out-dir dist",
     "start": "PRODUCTION=true node dist/init.js",
+    "prestart": "npm run build",
     "tunnel": "lt -h 'http://serverless.social' -p 5000"
   },
   "repository": {
