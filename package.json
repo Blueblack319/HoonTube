@@ -1,0 +1,71 @@
+{
+  "name": "hoontube",
+  "version": "1.0.0",
+  "description": "Cloning YouTube with Vanilla, Node JS",
+  "main": "index.js",
+  "scripts": {
+    "copyViews": "cp -r src/views dist",
+    "dev:server": "nodemon --exec babel-node src/init.js --delay 2",
+    "build:assets": "gulp dev",
+    "build:server": "babel src --out-dir dist",
+    "build": "npm run build:server && npm run copyViews && npm run build:assets",
+    "deploy": "gulp deploy",
+    "tunnel": "lt -h 'http://serverless.social' -p 5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazybirdz/HoonTube.git"
+  },
+  "author": "Crazybirdz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crazybirdz/HoonTube/issues"
+  },
+  "homepage": "https://github.com/crazybirdz/HoonTube#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "@babel/runtime": "^7.11.2",
+    "aws-sdk": "^2.739.0",
+    "axios": "^0.20.0",
+    "babelify": "^10.0.0",
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "del": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.7.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "get-blob-duration": "^1.1.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-bro": "^2.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-csso": "^4.0.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "helmet": "^4.0.0",
+    "mongoose": "^5.10.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-github": "^1.1.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "pug": "^3.0.0",
+    "uglifyify": "^5.0.2"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
