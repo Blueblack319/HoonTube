@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:server && npm run copyViews && npm run build:assets",
-    "copyViews": "cp -R ~/project/HoonTube/src/views ~/project/HoonTube/dist",
+    "copyViews": "cp -R src/views dist",
     "dev:server": "nodemon --exec babel-node src/init.js --delay 2",
     "build:assets": "gulp dev",
     "build:server": "babel src --out-dir dist",
