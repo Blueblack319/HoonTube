@@ -10,6 +10,7 @@
     "build:server": "babel src --out-dir dist",
     "build": "npm run build:server && npm run copyViews && npm run build:assets",
     "deploy": "gulp deploy",
+    "start": "node dist/init.js",
     "tunnel": "lt -h 'http://serverless.social' -p 5000"
   },
   "repository": {
