@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:server && npm run copyViews && npm run build:assets",
-    "copyViews": "cp -R /home/passion/projects/HoonTube/src/views /home/passion/projects/HoonTube/dist",
+    "copyViews": "cp -R src/views dist",
     "dev:server": "nodemon --exec babel-node src/init.js --delay 2",
     "build:assets": "gulp dev",
-    "build:server": "babel /home/passion/projects/HoonTube/src --out-dir /home/passion/projects/HoonTube/dist",
+    "build:server": "babel src --out-dir dist",
     "start": "PRODUCTION=true node dist/init.js",
     "prestart": "npm run build",
     "tunnel": "lt -h 'http://serverless.social' -p 5000"
