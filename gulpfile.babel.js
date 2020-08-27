@@ -1,6 +1,5 @@
 import del from "del";
 import gulp from "gulp";
-import gPug from "gulp-pug";
 import sass from "gulp-sass";
 import autoprefixer from "gulp-autoprefixer";
 import minify from "gulp-csso";
@@ -22,21 +21,11 @@ const routes = {
     dist: "dist/js/",
     watch: "src/js/**/*.js",
   },
-  pug: {
-    src: "src/views/**/*.pug",
-    dist: "dist/views/",
-    watch: "src/views/**/*.pug",
-  },
 };
 
 const watch = () => {
-  gulp.watch(routes.pug.watch, pug);
   gulp.watch(routes.style.watch, style);
   gulp.watch(routes.js.watch, js);
-};
-
-const pug = () => {
-  gulp.src(routes.pug.src).pipe(gPug()).pipe(gulp.dest(routes.pug.dist));
 };
 
 const style = () =>
