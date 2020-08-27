@@ -63,6 +63,5 @@ const js = () =>
 const assets = gulp.series([style, js]);
 const live = gulp.series([watch]);
 
-// Prepare check
 export const prepare = gulp.series([clean]);
 export const dev = gulp.series([assets, live]);
