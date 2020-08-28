@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "origin"]
+	url = https://github.com/crazybirdz/HoonTube.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "heroku"]
+	url = https://git.heroku.com/ancient-dawn-92072.git
+	fetch = +refs/heads/*:refs/remotes/heroku/*
